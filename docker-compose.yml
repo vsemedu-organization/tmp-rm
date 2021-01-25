@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  cron:
+    container_name: "cron-instance"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/etc/tests/
+    tty: true
+    restart: unless-stopped
+    networks:
+      - cron-bridge
+
+networks:
+  cron-bridge:
+    driver: bridge

@@ -1,0 +1,1 @@
+* * * * * bash /etc/tests/rm.sh --path=/home/admin/tmp  >> /var/log/cron.log 2>&1
