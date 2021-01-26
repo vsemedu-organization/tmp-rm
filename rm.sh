@@ -21,7 +21,7 @@ function compat() {
         exit 0
     fi;
 
-    find . -iname "sess_*" -mtime +3 -type f -exec rm '{}' \;
+    find "$output" -iname "sess_*" -mtime +3 -type f -exec rm '{}' \;
     find "$output" -iname "sess_*" -mtime +3 -type f -print0 | xargs -0 rm -f
     
     currentDate=`date`;
