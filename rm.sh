@@ -23,7 +23,7 @@ function compat() {
 
     # find "$output" -name "*.*" -type f -delete
     # find "$output" -name "sess_*" -atime -3 -type f -exec rm '{}' \;
-    find . -iname "sess_*" -atime -3 -type f -print0 | xargs -0 rm -f
+    find . -iname "sess_*" -mtime +3 -type f -print0 | xargs -0 rm -f
     
     currentDate=`date`;
     echo "Folder files has been deleted at $currentDate" >> /var/log/cron.log
